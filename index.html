@@ -850,32 +850,25 @@
     </section>
   <div id="responseMessage"></div>
 
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
+  <form action="https://api.web3forms.com/submit" method="POST">
 
-      const form = e.target;
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="533a7fc2-a2d6-46be-9978-ce228edc5aab">
 
-      try {
-        const response = await fetch('https://atikahjapry-github-io.pages.dev/', { // ✅ Replaced with my Cloudflare Worker URL
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
+    <!-- Form Inputs. Each input must have a name="" attribute -->
+    <input type="text" name="name" required>
+    <input type="email" name="email" required>
+    <textarea name="message" required></textarea>
 
-        const result = await response.json();
-        document.getElementById('responseMessage').innerText = result.message || "Form submitted successfully!";
-        form.reset();
-      } catch (error) {
-        document.getElementById('responseMessage').innerText = "There was an error submitting the form.";
-        console.error(error);
-      }
-    });
-  </script>
+    <!-- Honeypot Spam Protection -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+    <!-- Custom Confirmation / Success Page -->
+    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+    <button type="submit">Submit Form</button>
+
+</form>
     <!-- Footer -->
     <footer>
         <div class="container">
