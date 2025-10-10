@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - SWIFT Payments Data Analyst</title>
+    <meta name="description" content="Experienced Data Analyst specializing in SWIFT payment systems with 7 years of expertise in transaction analysis, compliance, and optimization.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            max-width: 700px;
+            margin: -2rem auto 3rem;
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .skill-category h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: var(--light);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--dark);
+            border: 1px solid var(--border);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+            color: white;
+            padding: 2rem;
+        }
+
+        .project-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-header .project-subtitle {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-body h4 {
+            color: var(--primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .project-body h4:first-child {
+            margin-top: 0;
+        }
+
+        .project-body p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Experience Section */
+        #experience {
+            background: white;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            border-left: 3px solid var(--primary);
+            padding-left: 2rem;
+            padding-bottom: 2rem;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .timeline-item h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-meta {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-item ul {
+            color: var(--gray);
+            margin-left: 1.5rem;
+        }
+
+        .timeline-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--light);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .stats {
+                gap: 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">YourName</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Your Name</h1>
+            <div class="subtitle">Data Analyst | SWIFT Payments Specialist</div>
+            <p>Transforming complex payment data into actionable insights with 7 years of expertise in SWIFT messaging, transaction analysis, and financial compliance.</p>
+            
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">7+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">50+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100M+</span>
+                    <span class="stat-label">Transactions Analyzed</span>
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>SWIFT Payments & Data Analytics Expert</h3>
+                    <p>With 7 years of specialized experience in SWIFT payment systems, I help financial institutions optimize their cross-border payment operations through data-driven insights and advanced analytics.</p>
+                    
+                    <p>My expertise spans the full payment lifecycle—from transaction monitoring and reconciliation to compliance analytics and process optimization. I've worked extensively with MT and MX message formats, helping organizations navigate the ISO 20022 migration while maintaining operational excellence.</p>
+                    
+                    <p>I'm passionate about uncovering patterns in complex payment data and building solutions that reduce costs, improve efficiency, and ensure regulatory compliance.</p>
+                </div>
+
+                <div class="skills-section">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>SWIFT & Payments</h4>
+                            <div class="skill-tags">
+                                <span class="tag">MT Messages</span>
+                                <span class="tag">ISO 20022</span>
+                                <span class="tag">MX Messages</span>
+                                <span class="tag">Payment Operations</span>
+                                <span class="tag">Reconciliation</span>
+                                <span class="tag">AML/Compliance</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>Analytics & Programming</h4>
+                            <div class="skill-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">R</span>
+                                <span class="tag">Pandas</span>
+                                <span class="tag">NumPy</span>
+                                <span class="tag">Statistical Analysis</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>Visualization Tools</h4>
+                            <div class="skill-tags">
+                                <span class="tag">Tableau</span>
+                                <span class="tag">Power BI</span>
+                                <span class="tag">Excel</span>
+                                <span class="tag">Matplotlib</span>
+                                <span class="tag">Plotly</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4>Data & Cloud</h4>
+                            <div class="skill-tags">
+                                <span class="tag">PostgreSQL</span>
+                                <span class="tag">MySQL</span>
+                                <span class="tag">Oracle</span>
+                                <span class="tag">AWS</span>
+                                <span class="tag">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Here are some of my recent projects that showcase my expertise in SWIFT payment analysis and data-driven problem solving.</p>
+            
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>SWIFT Payment Failure Analysis</h3>
+                        <p class="project-subtitle">Reducing transaction failures through data-driven insights</p>
+                    </div>
+                    <div class="project-body">
+                        <h4>Challenge</h4>
+                        <p>Client experienced 12% payment failure rate causing customer dissatisfaction and operational costs.</p>
+                        
+                        <h4>Solution</h4>
+                        <p>Analyzed 500K+ MT103 transactions to identify failure patterns. Built predictive model to flag high-risk payments before processing.</p>
+                        
+                        <h4>Results</h4>
+                        <p>• Reduced failure rate from 12% to 4.5%<br>
+                        • Saved $2.3M annually in processing costs<br>
+                        • Improved customer satisfaction by 35%</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Tableau</span>
+                            <span class="tech-tag">MT103</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Real-Time Transaction Monitoring</h3>
+                        <p class="project-subtitle">Building automated anomaly detection system</p>
+                    </div>
+                    <div class="project-body">
+                        <h4>Challenge</h4>
+                        <p>Manual transaction monitoring was slow and missed suspicious patterns, creating compliance risks.</p>
+                        
+                        <h4>Solution</h4>
+                        <p>Developed real-time dashboard with ML-based anomaly detection for SWIFT messages. Integrated automated alerts for compliance team.</p>
+                        
+                        <h4>Results</h4>
+                        <p>• Detected 89% of anomalies in real-time<br>
+                        • Reduced investigation time by 60%<br>
+                        • Zero compliance violations in 18 months</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>ISO 20022 Migration Analytics</h3>
+                        <p class="project-subtitle">Assessing migration impact and data quality</p>
+                    </div>
+                    <div class="project-body">
+                        <h4>Challenge</h4>
+                        <p>Bank needed to assess readiness for ISO 20022 migration and understand impact on existing processes.</p>
+                        
+                        <h4>Solution</h4>
+                        <p>Analyzed MT to MX message transformation patterns, identified data gaps, and created migration roadmap with risk assessment.</p>
+                        
+                        <h4>Results</h4>
+                        <p>• Identified 200+ data quality issues early<br>
+                        • Created testing framework for 50K+ scenarios<br>
+                        • Successful migration with 99.7% accuracy</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">XML</span>
+                            <span class="tech-tag">ISO 20022</span>
+                            <span class="tech-tag">Excel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Cross-Border Payment Optimization</h3>
+                        <p class="project-subtitle">Optimizing routing and reducing costs</p>
+                    </div>
+                    <div class="project-body">
+                        <h4>Challenge</h4>
+                        <p>Inefficient payment routing led to high correspondent banking fees and slow settlement times.</p>
+                        
+                        <h4>Solution</h4>
+                        <p>Analyzed MT202 routing patterns across 150 corridors. Built optimization model to recommend best routing paths based on cost, speed, and reliability.</p>
+                        
+                        <h4>Results</h4>
+                        <p>• Reduced average routing cost by 28%<br>
+                        • Improved settlement speed by 40%<br>
+                        • $4.5M annual cost savings</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Network Analysis</span>
+                            <span class="tech-tag">MT202</span>
+                            <span class="tech-tag">Tableau</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>AML Pattern Detection System</h3>
+                        <p class="project-subtitle">Identifying suspicious transaction patterns</p>
+                    </div>
+                    <div class="project-body">
+                        <h4>Challenge</h4>
+                        <p>Traditional rule-based AML systems generated too many false positives, overwhelming compliance teams.</p>
+                        
+                        <h4>Solution</h4>
+                        <p>Developed machine learning models to detect complex money laundering patterns in SWIFT transactions using behavioral analytics and network analysis.</p>
+                        
+                        <h4>Results</h4>
+                        <p>• Reduced false positives by 65%<br>
+                        • Identified 23 previously undetected risks<br>
+                        • Improved investigation efficiency by 50%</p>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Graph Analytics</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Senior Data Analyst - SWIFT Payments</h3>
+                    <div class="timeline-meta">Financial Institution Name | 2021 - Present</div>
+                    <ul>
+                        <li>Lead analytics initiatives for $50B+ annual SWIFT transaction volume</li>
+                        <li>Developed automated monitoring systems reducing payment failures by 45%</li>
+                        <li>Spearheaded ISO 20022 migration analytics and readiness assessment</li>
+                        <li>Built predictive models for transaction anomaly detection with 92% accuracy</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Data Analyst - Payment Operations</h3>
+                    <div class="timeline-meta">Bank Name | 2019 - 2021</div>
+                    <ul>
+                        <li>Analyzed MT message flows to optimize cross-border payment routing</li>
+                        <li>Created executive dashboards tracking KPIs for payment operations</li>
+                        <li>Reduced reconciliation discrepancies by 60% through improved data quality processes</li>
+                        <li>Collaborated with compliance team on AML transaction monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Junior Data Analyst - Treasury Operations</h3>
+                    <div class="timeline-meta">Financial Services Company | 2018 - 2019</div>
+                    <ul>
+                        <li>Supported SWIFT payment processing and reconciliation activities</li>
+                        <li>Developed SQL queries and reports for transaction analysis</li>
+                        <li>Assisted in migration from legacy systems to modern SWIFT infrastructure</li>
+                        <li>Performed data quality checks on MT103 and MT202 messages</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Interested in working together? I'd love to hear about your project and how I can help.</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            your.email@example.com
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            linkedin.com/in/yourprofile
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💻</div>
+                        <div>
+                            <strong>GitHub</strong><br>
+                            github.com/yourusername
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Location</strong><br>
+                            Your City, Country
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved. | Built with care for SWIFT payment analytics excellence.</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.\n\nNote: To make this form functional, you can:\n1. Use a service like Formspree or EmailJS\n2. Connect to Cloudflare Workers for backend processing\n3. Use a third-party form service');
+            e.target.reset();
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
