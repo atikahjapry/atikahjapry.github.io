@@ -524,7 +524,15 @@
             </div>
         </div>
     </section>
-
+<!--CV section-->
+    app.get("/api/cv/download", async (req, res) => {
+  const response = await fetch(CV_URL, {
+    headers: {
+      'Authorization': 'Bearer ' + process.env.D2_TOKEN
+    }
+  });
+  // stream same as above
+});
     <!-- About Section -->
     <section id="about">
         <div class="container">
