@@ -1,0 +1,4 @@
+# app-ads.txt for japryatikah site
+# Authorized seller: Google AdSense / AdMob
+
+google.com, pub-5324491790883472, DIRECT, f08c47fec0942fa0
