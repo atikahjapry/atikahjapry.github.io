@@ -1,121 +1,389 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>About — Atikah Japry</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Atikah Japry, a SWIFT Payments Data Analyst with 8+ years of experience in payment operations, ISO 20022 migration, and compliance analytics.">
+    <title>About Atikah Japry - SWIFT Payments Data Analyst</title>
     <style>
-        :root{
-            --bg:#d3dae6;
-            --card:#0000FF;
-            --muted:#9aa4b2;
-            --accent:#6ee7b7;
-            --glass: rgba(255,255,255,0.03);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
-        body{
-            background: linear-gradient(180deg,#071022 0%, #071b2a 60%);
-            color:#e6eef6;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            padding:2rem;
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
         }
-        .card{
-            width:100%;
-            max-width:860px;
-            background: linear-gradient(180deg,var(--card), rgba(11,18,32,0.85));
-            border-radius:12px;
-            padding:1.5rem;
-            box-shadow: 0 10px 30px rgba(2,6,23,0.6);
-            backdrop-filter: blur(6px);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        header{
-            display:flex;
-            gap:1rem;
-            align-items:center;
+        header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
         }
-        .avatar{
-            width:96px;
-            height:96px;
-            border-radius:999px;
-            background:linear-gradient(135deg,var(--accent),#60a5fa);
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-weight:700;
-            color:#082020;
-            font-size:28px;
-            overflow:hidden;
-            flex:0 0 96px;
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
-        h1{margin:0;font-size:1.25rem;}
-        .role{margin:0;color:var(--muted);font-size:.95rem;}
-        .meta{margin-top:.5rem;color:var(--muted);font-size:.95rem;}
-        main{margin-top:1.25rem;display:grid;grid-template-columns:1fr 260px;gap:1rem;}
-        @media (max-width:760px){ main{grid-template-columns:1fr;} .card{padding:1rem;} }
-        .section{background:var(--glass);padding:1rem;border-radius:10px;}
-        .section h2{margin:0 0 .5rem 0;font-size:1rem;}
-        p{margin:.35rem 0;color:#dbe7f6;line-height:1.5;}
-        .skills{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0;list-style:none;}
-        .skills li{background:rgba(255,255,255,0.03);padding:.35rem .6rem;border-radius:999px;font-size:.85rem;color:var(--muted);}
-        .contact a{color:var(--accent);text-decoration:none;}
-        .links{display:flex;flex-direction:column;gap:.45rem;margin-top:.5rem;}
-        .stat-row{display:flex;gap:.5rem;align-items:center;justify-content:space-between;padding:.35rem .5rem;border-radius:8px;background:rgba(255,255,255,0.02);font-size:.9rem;color:var(--muted);}
-        footer{margin-top:1rem;text-align:center;color:var(--muted);font-size:.85rem;}
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .content-section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 20px;
+            font-size: 2em;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+        h3 {
+            color: #2563eb;
+            margin: 25px 0 15px;
+            font-size: 1.4em;
+        }
+        .intro-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .expertise-card {
+            background: #f0f9ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        .expertise-card h4 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            margin: 30px 0;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -40px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #3b82f6;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 20px;
+            width: 2px;
+            height: calc(100% + 10px);
+            background: #e5e7eb;
+        }
+        .timeline-item:last-child::after {
+            display: none;
+        }
+        .year {
+            color: #3b82f6;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 1em;
+            opacity: 0.9;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .skill-tag {
+            background: #dbeafe;
+            color: #1e40af;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .quote-box {
+            background: #f0f9ff;
+            border-left: 5px solid #3b82f6;
+            padding: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 50px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #1e3a8a;
+            padding: 15px 40px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.3s;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            .content-section {
+                padding: 25px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="card" role="main">
-        <header>
-            <div class="avatar" aria-hidden="true">YN</div>
-            <div>
-                <h1>Atikah Japry</h1>
-                <p class="role">Frontend Developer · Designer</p>
-                <p class="meta">Building accessible, performant interfaces and pleasant UX.</p>
+    <header>
+        <div class="container">
+            <h1>About Atikah Japry</h1>
+            <p>Transforming Payment Operations Through Data Analytics</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Who I Am</h2>
+            <p class="intro-text">
+                I'm a SWIFT Payments Data Analyst with over 8 years of specialized experience in the financial messaging ecosystem. My career has been dedicated to solving complex payment challenges through data-driven insights, helping financial institutions optimize their operations, reduce costs, and maintain compliance in an increasingly complex regulatory landscape.
+            </p>
+            <p class="intro-text">
+                Based in my work with leading organizations like Accenture, I've developed deep expertise in the full payment lifecycle—from transaction monitoring and reconciliation to compliance analytics and process optimization. What drives me is the opportunity to uncover hidden patterns in massive datasets and translate those insights into actionable solutions that make real business impact.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">Transactions Analyzed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12%</div>
+                    <div class="stat-label">Avg. Failure Rate Reduction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Major Projects Delivered</div>
+                </div>
             </div>
-        </header>
+        </div>
 
-        <main>
-            <div>
-                <section class="section" aria-labelledby="about">
-                    <h2 id="about">About</h2>
-                    <p>I'm a frontend developer who focuses on clean HTML, semantic markup, and accessible interactions. I enjoy turning ideas into fast, responsive interfaces and improving usability for every user.</p>
-                    <p>I work with teams to ship features quickly while keeping code maintainable and inclusive.</p>
-                </section>
+        <div class="content-section">
+            <h2>My Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="year">2017-2019</span>
+                    <h3>Foundation Years</h3>
+                    <p>Started my career in payment operations, gaining hands-on experience with MT message formats (MT103, MT202, MT799) and learning the intricacies of cross-border payment processing. This period built my foundational understanding of SWIFT messaging standards and operational workflows.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="year">2020-2021</span>
+                    <h3>Specialization in Data Analytics</h3>
+                    <p>Transitioned into data analytics for payment systems, developing expertise in SQL, Python, and visualization tools. Led my first major project analyzing transaction failure patterns, which resulted in identifying root causes and implementing fixes that reduced failures by 12%.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="year">2022-2023</span>
+                    <h3>ISO 20022 Migration Expert</h3>
+                    <p>Became a key specialist in ISO 20022 MX message migration projects, helping clients navigate the transition from legacy MT formats. Developed comprehensive mapping strategies, data validation frameworks, and training programs for operational teams.</p>
+                </div>
+                
+                <div class="timeline-item">
+                    <span class="year">2024-Present</span>
+                    <h3>Senior Analyst & Strategic Advisor</h3>
+                    <p>Currently serving as a senior SWIFT payments data analyst at Accenture, leading complex reconciliation projects, AML compliance analytics, and operational optimization initiatives. Focusing on leveraging Microsoft Fabric and cloud technologies to build scalable analytics solutions.</p>
+                </div>
+            </div>
+        </div>
 
-                <section class="section" aria-labelledby="work" style="margin-top:1rem;">
-                    <h2 id="work">Work & Focus</h2>
-                    <p>Focus areas: component design, performance optimization, accessibility audits, and CSS architecture. I mentor junior devs and collaborate with designers to solve product problems.</p>
-                </section>
+        <div class="content-section">
+            <h2>My Expertise</h2>
+            <p class="intro-text">
+                My expertise spans the complete payment lifecycle, with particular strength in areas where data analytics meets operational excellence. I don't just understand the technical specifications—I understand how payments flow through complex banking ecosystems and where the pain points typically emerge.
+            </p>
+
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <h4>MT Message Analysis</h4>
+                    <p>Deep proficiency in MT103 (customer credit transfers), MT202 (financial institution transfers), MT799 (free format messages), and other SWIFT MT message types. Expert at parsing, validating, and troubleshooting message failures across various fields including ordering customer details, beneficiary information, and intermediary bank routing.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <h4>ISO 20022 Migration</h4>
+                    <p>Comprehensive experience guiding organizations through the ISO 20022 transition. This includes MX message structure analysis (pacs.008, pain.001, camt series), field mapping from MT to MX formats, data enrichment strategies, and ensuring business continuity during migration. I help teams understand not just the technical changes, but the business opportunities that structured data brings.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <h4>Payment Operations Analytics</h4>
+                    <p>End-to-end payment lifecycle analysis from initiation through clearing and settlement. Specializing in identifying bottlenecks, analyzing STP (straight-through processing) rates, monitoring transaction flows, exception handling analysis, and building dashboards that provide real-time operational visibility.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <h4>Reconciliation Excellence</h4>
+                    <p>Advanced reconciliation methodologies for SWIFT transactions, including nostro reconciliation, correspondent banking settlements, and multi-currency matching. Developed automated reconciliation frameworks that reduced manual effort by 40% while improving accuracy and reducing breaks.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <h4>AML & Compliance Analytics</h4>
+                    <p>Transaction monitoring and sanctions screening analytics, pattern detection for suspicious activity, compliance reporting automation, and regulatory change impact analysis. Experienced with FATF requirements, sanctions list screening (OFAC, EU, UN), and building models that balance compliance rigor with operational efficiency.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <h4>Data Architecture & Tools</h4>
+                    <p>Expertise in Microsoft Fabric for building scalable analytics solutions, SQL Server for transaction data analysis, Python for automation and advanced analytics, Power BI and Tableau for visualization, and cloud integration (Azure, AWS) for enterprise-scale payment systems.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Technical Skills</h2>
+            <h3>SWIFT & Payment Standards</h3>
+            <div class="skills-list">
+                <span class="skill-tag">MT103</span>
+                <span class="skill-tag">MT202</span>
+                <span class="skill-tag">MT799</span>
+                <span class="skill-tag">ISO 20022</span>
+                <span class="skill-tag">MX Messages</span>
+                <span class="skill-tag">pacs.008</span>
+                <span class="skill-tag">pain.001</span>
+                <span class="skill-tag">camt Messages</span>
+                <span class="skill-tag">SWIFT GPI</span>
             </div>
 
-            <aside>
-                <section class="section" aria-labelledby="skills">
-                    <h2 id="skills">Skills</h2>
-                    <ul class="skills" aria-label="Skills list">
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Accessibility (A11y)</li>
-                        <li>Design Systems</li>
-                    </ul>
-                </section>
+            <h3>Data & Analytics</h3>
+            <div class="skills-list">
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Microsoft Fabric</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Tableau</span>
+                <span class="skill-tag">Advanced Excel</span>
+                <span class="skill-tag">Data Modeling</span>
+                <span class="skill-tag">ETL</span>
+            </div>
 
-                <section class="section contact" aria-labelledby="contact" style="margin-top:1rem;">
-                    <h2 id="contact">Contact</h2>
-                    <div class="links">
-                        <div class="stat-row"><span>Email</span><a href="mailto:japryatikah@gmail.com">japryatikah@gmail.com</a></div>
-                        <div class="stat-row"><span>GitHub</span><a href="https://github.com/atikahjapry" target="_blank" rel="noopener">github.com/atikahjapry</a></div>
-                    </div>
-                </section>
-            </aside>
-        </main>
+            <h3>Domain Knowledge</h3>
+            <div class="skills-list">
+                <span class="skill-tag">Payment Operations</span>
+                <span class="skill-tag">Reconciliation</span>
+                <span class="skill-tag">AML/KYC</span>
+                <span class="skill-tag">Sanctions Screening</span>
+                <span class="skill-tag">Correspondent Banking</span>
+                <span class="skill-tag">Nostro Management</span>
+                <span class="skill-tag">Compliance Reporting</span>
+            </div>
+        </div>
 
-        <footer>
-            <p>© Atikah Japry — Built with plain HTML & CSS</p>
-        </footer>
+        <div class="content-section">
+            <h2>My Approach</h2>
+            <div class="quote-box">
+                "I believe the best solutions emerge when deep technical knowledge meets genuine curiosity about business challenges. Every data point tells a story—my job is to listen and translate that story into action."
+            </div>
+
+            <h3>Problem-First Mindset</h3>
+            <p class="intro-text">
+                I don't start with the tools—I start with understanding the problem. Whether it's high payment failure rates, reconciliation breaks, or compliance concerns, I take time to understand the business context, operational constraints, and strategic objectives before proposing solutions.
+            </p>
+
+            <h3>Data-Driven Decision Making</h3>
+            <p class="intro-text">
+                Every recommendation I make is backed by solid data analysis. I build comprehensive analytical frameworks that not only identify issues but quantify their impact and prioritize them based on business value. This approach ensures resources are focused where they'll have the greatest impact.
+            </p>
+
+            <h3>Collaboration & Knowledge Transfer</h3>
+            <p class="intro-text">
+                The best analytics projects don't end with a report—they end with empowered teams who can maintain and build upon the solutions. I prioritize clear documentation, training, and knowledge transfer to ensure sustainable improvements long after project completion.
+            </p>
+
+            <h3>Continuous Improvement</h3>
+            <p class="intro-text">
+                The payments landscape is constantly evolving with new regulations, standards, and technologies. I stay current through continuous learning, industry engagement, and experimentation with emerging tools and techniques. This ensures my clients benefit from the latest best practices and innovations.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Why Organizations Choose to Work With Me</h2>
+            <p class="intro-text">
+                Financial institutions and payment service providers face increasingly complex challenges: regulatory pressure, customer expectations for faster payments, technology transitions like ISO 20022, and the constant need to optimize costs while maintaining security and compliance.
+            </p>
+            <p class="intro-text">
+                What sets my approach apart is the combination of deep technical SWIFT expertise, advanced data analytics capabilities, and practical operational experience. I've been in the trenches dealing with real payment failures at 2 AM, I understand the pressure of regulatory deadlines, and I know what it takes to get organizational buy-in for change.
+            </p>
+            <p class="intro-text">
+                Whether you need to investigate payment failure patterns, prepare for ISO 20022 migration, optimize reconciliation processes, or enhance compliance monitoring, I bring both the analytical rigor and the practical wisdom to deliver solutions that work in the real world.
+            </p>
+        </div>
+
+        <div class="cta-section">
+            <h2>Let's Discuss Your Payment Challenges</h2>
+            <p style="font-size: 1.1em; margin: 20px 0;">
+                Are you facing payment operations challenges that require data-driven solutions? Whether it's reducing transaction failures, preparing for ISO 20022, or optimizing your reconciliation processes, I'd welcome the opportunity to discuss how my expertise can help.
+            </p>
+            <a href="contact.html" class="cta-button">Get In Touch</a>
+        </div>
     </div>
 </body>
 </html>
