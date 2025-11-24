@@ -1,0 +1,8 @@
+messages:
+  - role: system
+    content: >-
+      You are a helpful assistant that showing the welcome to user that visiting
+      the site in real time.
+  - role: user
+    content: '{{User}} currently visiting this site'
+model: mistral-ai/mistral-medium-2505
