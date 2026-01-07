@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5324491790883472"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atikah Japry - SWIFT Payments Data Analyst</title>
     <p style="font-size: 20px; color:#1F9AFE;text-align: center;"><a href="about.html">More on this
-          site</a></p>
-    <meta name="description" content=" Experienced Data Analyst specializing in SWIFT payment systems with 7 years of expertise in transaction analysis, compliance, and optimization.">
+            site</a></p>
+    <meta name="description"
+        content=" Experienced Data Analyst specializing in SWIFT payment systems with 7 years of expertise in transaction analysis, compliance, and optimization.">
     <meta name="google-adsense-account" content="ca-pub-5324491790883472">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -18,20 +27,58 @@
         }
 
         :root {
-            --primary: #2563eb;
-            --secondary: #1e40af;
-            --accent: #3b82f6;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --border: #e2e8f0;
+            /* Light Mode Colors */
+            --primary: hsl(220, 90%, 56%);
+            --primary-dark: hsl(220, 85%, 45%);
+            --primary-light: hsl(220, 95%, 65%);
+            --secondary: hsl(220, 80%, 40%);
+            --accent: hsl(215, 85%, 60%);
+            --dark: hsl(215, 25%, 15%);
+            --light: hsl(210, 40%, 98%);
+            --gray: hsl(215, 15%, 50%);
+            --gray-light: hsl(215, 20%, 65%);
+            --border: hsl(215, 25%, 92%);
+            --bg-primary: hsl(210, 40%, 98%);
+            --bg-secondary: #ffffff;
+            --text-primary: hsl(215, 25%, 15%);
+            --text-secondary: hsl(215, 15%, 50%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.3);
+        }
+
+        [data-theme="dark"] {
+            /* Dark Mode Colors */
+            --primary: hsl(220, 90%, 62%);
+            --primary-dark: hsl(220, 85%, 55%);
+            --primary-light: hsl(220, 95%, 70%);
+            --secondary: hsl(220, 80%, 50%);
+            --accent: hsl(215, 85%, 65%);
+            --dark: hsl(0, 0%, 95%);
+            --light: hsl(220, 20%, 12%);
+            --gray: hsl(215, 10%, 65%);
+            --gray-light: hsl(215, 15%, 55%);
+            --border: hsl(215, 15%, 22%);
+            --bg-primary: hsl(220, 20%, 12%);
+            --bg-secondary: hsl(220, 18%, 16%);
+            --text-primary: hsl(0, 0%, 95%);
+            --text-secondary: hsl(215, 10%, 65%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.5);
+            --glass-bg: rgba(30, 35, 50, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: var(--dark);
-            background: var(--light);
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
         }
 
         .container {
@@ -40,13 +87,47 @@
             padding: 0 20px;
         }
 
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary-light));
+            background-size: 200% 100%;
+            z-index: 9999;
+            animation: gradientShift 3s ease infinite;
+            transition: width 0.1s ease-out;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
         /* Navigation */
         nav {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--glass-border);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: var(--shadow-md);
         }
 
         nav .container {
@@ -58,75 +139,362 @@
 
         .logo {
             font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--text-primary);
             font-weight: 500;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .nav-links a:hover {
             color: var(--primary);
         }
 
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            width: 60px;
+            height: 32px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .theme-toggle-slider {
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        [data-theme="dark"] .theme-toggle-slider {
+            transform: translateX(28px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-menu.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu a {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu.active a:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .mobile-menu.active a:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-menu.active a:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-menu.active a:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        .mobile-menu.active a:nth-child(5) {
+            transition-delay: 0.5s;
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--primary-dark) 100%);
+            background-size: 200% 200%;
+            animation: gradientFlow 15s ease infinite;
             color: white;
-            padding: 100px 0;
+            padding: 120px 0 100px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientFlow {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Particle Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-photo {
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
+                0 0 0 10px rgba(255, 255, 255, 0.1),
+                0 0 60px rgba(255, 255, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-photo img:hover {
+            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.3),
+                0 0 0 15px rgba(255, 255, 255, 0.15),
+                0 0 80px rgba(255, 255, 255, 0.3);
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            font-weight: 800;
+            font-weight: 900;
+            animation: fadeInUp 1s ease 0.2s backwards;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
         }
 
         .hero .subtitle {
             font-size: 1.5rem;
             margin-bottom: 1rem;
             opacity: 0.95;
+            animation: fadeInUp 1s ease 0.4s backwards;
+            min-height: 2rem;
+        }
+
+        .typing-text {
+            display: inline-block;
+            border-right: 3px solid rgba(255, 255, 255, 0.8);
+            padding-right: 5px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                border-color: rgba(255, 255, 255, 0.8);
+            }
+
+            50% {
+                border-color: transparent;
+            }
         }
 
         .hero p {
             font-size: 1.1rem;
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto 2.5rem;
             opacity: 0.9;
+            animation: fadeInUp 1s ease 0.6s backwards;
+            line-height: 1.8;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .stats {
             display: flex;
             justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
+            gap: 4rem;
+            margin: 3rem 0;
             flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.8s backwards;
         }
 
         .stat {
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
+            font-size: 3rem;
+            font-weight: 800;
             display: block;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         .stat-label {
             opacity: 0.9;
             font-size: 0.95rem;
+            margin-top: 0.5rem;
         }
 
         .cta-buttons {
@@ -134,78 +502,132 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            animation: fadeInUp 1s ease 1s backwards;
         }
 
         .btn {
-            padding: 12px 30px;
-            border-radius: 8px;
+            padding: 14px 36px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-block;
+            position: relative;
+            overflow: hidden;
+            font-size: 1rem;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:active::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn-primary {
             background: white;
             color: var(--primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             border: 2px solid white;
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
             background: white;
             color: var(--primary);
+            transform: translateY(-3px);
         }
 
         /* Section Styles */
         section {
-            padding: 80px 0;
+            padding: 100px 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             text-align: center;
-            margin-bottom: 3rem;
-            color: var(--dark);
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 800;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
         }
 
         .section-subtitle {
             text-align: center;
-            color: var(--gray);
+            color: var(--text-secondary);
             max-width: 700px;
-            margin: -2rem auto 3rem;
+            margin: 2rem auto 4rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
 
         /* About Section */
         #about {
-            background: white;
+            background: var(--bg-secondary);
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: start;
         }
 
         .about-text h3 {
             color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
         }
 
         .about-text p {
-            color: var(--gray);
+            color: var(--text-secondary);
             margin-bottom: 1.5rem;
+            line-height: 1.8;
         }
 
         .skills-grid {
@@ -216,70 +638,137 @@
 
         .skill-category h4 {
             color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
 
         .tag {
-            background: var(--light);
-            padding: 6px 12px;
-            border-radius: 20px;
+            background: var(--bg-primary);
+            padding: 8px 16px;
+            border-radius: 25px;
             font-size: 0.85rem;
-            color: var(--dark);
-            border: 1px solid var(--border);
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+            cursor: default;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tag::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .tag:hover::before {
+            left: 100%;
+        }
+
+        .tag:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
         }
 
         /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .project-card {
-            background: white;
-            border-radius: 12px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+            border: 1px solid var(--border);
+        }
+
+        .project-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            transform: translateY(-8px) rotateX(2deg);
+            box-shadow: var(--shadow-lg);
         }
 
         .project-header {
             background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
             color: white;
-            padding: 2rem;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
         }
 
         .project-header h3 {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 0.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
 
         .project-header .project-subtitle {
-            opacity: 0.9;
+            opacity: 0.95;
             font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
         }
 
         .project-body {
-            padding: 2rem;
+            padding: 2.5rem;
         }
 
         .project-body h4 {
             color: var(--primary);
             margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+            font-weight: 700;
         }
 
         .project-body h4:first-child {
@@ -287,189 +776,278 @@
         }
 
         .project-body p {
-            color: var(--gray);
+            color: var(--text-secondary);
             margin-bottom: 1rem;
+            line-height: 1.7;
         }
 
         .project-tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
         }
 
         .tech-tag {
-            background: var(--light);
-            color: var(--primary);
-            padding: 4px 10px;
-            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .tech-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
         }
 
         /* Experience Section */
         #experience {
-            background: white;
+            background: var(--bg-secondary);
         }
 
         .timeline {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .timeline-item {
             border-left: 3px solid var(--primary);
-            padding-left: 2rem;
-            padding-bottom: 2rem;
+            padding-left: 3rem;
+            padding-bottom: 3rem;
             position: relative;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .timeline-item:before {
             content: '';
             position: absolute;
-            left: -8px;
+            left: -10px;
             top: 0;
-            width: 13px;
-            height: 13px;
+            width: 17px;
+            height: 17px;
             border-radius: 50%;
             background: var(--primary);
+            box-shadow: 0 0 0 4px var(--bg-secondary),
+                0 0 0 8px var(--primary-light);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover:before {
+            transform: scale(1.3);
+            box-shadow: 0 0 0 6px var(--bg-secondary),
+                0 0 0 12px var(--primary-light);
         }
 
         .timeline-item h3 {
-            color: var(--dark);
-            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            font-size: 1.3rem;
         }
 
         .timeline-meta {
-            color: var(--gray);
+            color: var(--primary);
             font-size: 0.95rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
         .timeline-item ul {
-            color: var(--gray);
+            color: var(--text-secondary);
             margin-left: 1.5rem;
+            line-height: 1.8;
         }
 
         .timeline-item li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item li:hover {
+            color: var(--text-primary);
+            transform: translateX(5px);
         }
 
         /* Contact Section */
         #contact {
-            background: var(--light);
+            background: var(--bg-primary);
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            max-width: 900px;
+            gap: 4rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .contact-info h3 {
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            font-weight: 700;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 12px;
+        }
+
+        .contact-item:hover {
+            background: var(--bg-secondary);
+            transform: translateX(10px);
         }
 
         .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
             font-weight: 700;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .contact-icon {
+            transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
         }
 
         .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            background: var(--bg-secondary);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             font-weight: 600;
-            color: var(--dark);
+            color: var(--text-primary);
+            font-size: 0.95rem;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
+            padding: 14px 16px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
             font-family: inherit;
             font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            transform: translateY(-2px);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 140px;
         }
 
         .btn-submit {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             color: white;
             border: none;
             cursor: pointer;
             width: 100%;
+            font-size: 1.05rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
 
         .btn-submit:hover {
-            background: var(--secondary);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
         }
 
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
-            padding: 2rem 0;
+            padding: 2.5rem 0;
             text-align: center;
         }
 
+        [data-theme="dark"] footer {
+            background: hsl(220, 25%, 10%);
+        }
+
         footer p {
-            opacity: 0.8;
+            opacity: 0.9;
+            line-height: 1.8;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .stats {
-                gap: 1.5rem;
+            .mobile-menu-toggle {
+                display: flex;
             }
 
             .nav-links {
                 display: none;
             }
 
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-photo img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .stats {
+                gap: 2rem;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
             .about-content,
             .contact-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
             .skills-grid {
@@ -479,54 +1057,107 @@
             .projects-grid {
                 grid-template-columns: 1fr;
             }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .timeline-item {
+                padding-left: 2rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
         }
 
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
+
+        /* Utility Classes */
+        .fade-in {
+            animation: fadeInUp 0.8s ease;
+        }
     </style>
 </head>
+
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="services.html">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <div class="theme-toggle" onclick="toggleTheme()" style="margin-top: 2rem;">
+            <div class="theme-toggle-slider">🌙</div>
+        </div>
+    </div>
+
     <!-- Navigation -->
-    
-<div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="HORIZONTAL" data-vanity="atikahjapry" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/atikahjapry?trk=profile-badge">Atikah Japry</a></div>
-    <nav>
+
+    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark"
+        data-type="HORIZONTAL" data-vanity="atikahjapry" data-version="v1"><a class="badge-base__link LI-simple-link"
+            href="https://uk.linkedin.com/in/atikahjapry?trk=profile-badge">Atikah Japry</a></div>
+    <nav id="navbar">
         <div class="container">
             <div class="logo">Atikah Japry</div>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <div class="theme-toggle" onclick="toggleTheme()">
+                        <div class="theme-toggle-slider" id="themeIcon">☀️</div>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+        <!-- Particle Background -->
+        <div class="particles" id="particles"></div>
+
         <div class="container">
-                    <div class="Atikah Japry photo">
-                      <a target="_blank" href="6321021326961261758.jpg">
-                    <img src="6321021326961261758.jpg" alt="Atikah Japry" width=50%>
-                      </a>
-                    <!--remove the discrepancies of div class under photo -->
-                    </div>
+            <div class="hero-photo">
+                <a target="_blank" href="6321021326961261758.jpg">
+                    <img src="6321021326961261758.jpg" alt="Atikah Japry">
+                </a>
+            </div>
             <h1>Atikah Japry</h1>
-            <div class="subtitle">Data Analyst | SWIFT Payments Specialist</div>
-            <p>Transforming complex payment data into actionable insights with 7 years of expertise in SWIFT messaging, transaction analysis, and financial compliance.</p>
-            
+            <div class="subtitle">
+                <span class="typing-text" id="typingText">Data Analyst | SWIFT Payments Specialist</span>
+            </div>
+            <p>Transforming complex payment data into actionable insights with 7 years of expertise in SWIFT messaging,
+                transaction analysis, and financial compliance.</p>
+
             <div class="stats">
                 <div class="stat">
-                    <span class="stat-number">7+</span>
+                    <span class="stat-number" data-target="7">0</span>+
                     <span class="stat-label">Years Experience</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">50+</span>
+                    <span class="stat-number" data-target="50">0</span>+
                     <span class="stat-label">Projects Completed</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">100B+</span>
+                    <span class="stat-number" data-target="100">0</span>B+
                     <span class="stat-label">Transactions Analyzed</span>
                 </div>
             </div>
@@ -545,11 +1176,17 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>SWIFT Payments & Data Analytics Expert</h3>
-                    <p>With 7 years of specialized experience in SWIFT payment systems, I help financial institutions optimize their cross-border payment operations through data-driven insights and advanced analytics.</p>
-                    
-                    <p>My expertise spans the full payment lifecycle from transaction monitoring and reconciliation to compliance analytics and process optimization. I've worked extensively with MT and MX message formats, helping organizations navigate the ISO 20022 migration while maintaining operational excellence.</p>
-                    
-                    <p>I'm passionate about uncovering patterns in complex payment data and building solutions that reduce costs, improve efficiency, and ensure regulatory compliance.</p>
+                    <p>With 7 years of specialized experience in SWIFT payment systems, I help financial institutions
+                        optimize their cross-border payment operations through data-driven insights and advanced
+                        analytics.</p>
+
+                    <p>My expertise spans the full payment lifecycle from transaction monitoring and reconciliation to
+                        compliance analytics and process optimization. I've worked extensively with MT and MX message
+                        formats, helping organizations navigate the ISO 20022 migration while maintaining operational
+                        excellence.</p>
+
+                    <p>I'm passionate about uncovering patterns in complex payment data and building solutions that
+                        reduce costs, improve efficiency, and ensure regulatory compliance.</p>
                 </div>
 
                 <div class="skills-section">
@@ -609,8 +1246,9 @@
     <section id="projects">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">Here are some of my recent projects that showcase my expertise in SWIFT payment analysis and data-driven problem solving.</p>
-            
+            <p class="section-subtitle">Here are some of my recent projects that showcase my expertise in SWIFT payment
+                analysis and data-driven problem solving.</p>
+
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card">
@@ -620,16 +1258,18 @@
                     </div>
                     <div class="project-body">
                         <h4>Challenge</h4>
-                        <p>Client experienced 12% payment failure rate causing customer dissatisfaction and operational costs.</p>
-                        
+                        <p>Client experienced 12% payment failure rate causing customer dissatisfaction and operational
+                            costs.</p>
+
                         <h4>Solution</h4>
-                        <p>Analyzed 500K+ MT103 transactions to identify failure patterns. Built predictive model to flag high-risk payments before processing.</p>
-                        
+                        <p>Analyzed 500K+ MT103 transactions to identify failure patterns. Built predictive model to
+                            flag high-risk payments before processing.</p>
+
                         <h4>Results</h4>
                         <p>• Reduced failure rate from 12% to 4.5%<br>
-                        • Saved $2.3M annually in processing costs<br>
-                        • Improved customer satisfaction by 35%</p>
-                        
+                            • Saved $2.3M annually in processing costs<br>
+                            • Improved customer satisfaction by 35%</p>
+
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">SQL</span>
@@ -647,16 +1287,18 @@
                     </div>
                     <div class="project-body">
                         <h4>Challenge</h4>
-                        <p>Manual transaction monitoring was slow and missed suspicious patterns, creating compliance risks.</p>
-                        
+                        <p>Manual transaction monitoring was slow and missed suspicious patterns, creating compliance
+                            risks.</p>
+
                         <h4>Solution</h4>
-                        <p>Developed real-time dashboard with ML-based anomaly detection for SWIFT messages. Integrated automated alerts for compliance team.</p>
-                        
+                        <p>Developed real-time dashboard with ML-based anomaly detection for SWIFT messages. Integrated
+                            automated alerts for compliance team.</p>
+
                         <h4>Results</h4>
                         <p>• Detected 89% of anomalies in real-time<br>
-                        • Reduced investigation time by 60%<br>
-                        • Zero compliance violations in 18 months</p>
-                        
+                            • Reduced investigation time by 60%<br>
+                            • Zero compliance violations in 18 months</p>
+
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Scikit-learn</span>
@@ -674,16 +1316,18 @@
                     </div>
                     <div class="project-body">
                         <h4>Challenge</h4>
-                        <p>Bank needed to assess readiness for ISO 20022 migration and understand impact on existing processes.</p>
-                        
+                        <p>Bank needed to assess readiness for ISO 20022 migration and understand impact on existing
+                            processes.</p>
+
                         <h4>Solution</h4>
-                        <p>Analyzed MT to MX message transformation patterns, identified data gaps, and created migration roadmap with risk assessment.</p>
-                        
+                        <p>Analyzed MT to MX message transformation patterns, identified data gaps, and created
+                            migration roadmap with risk assessment.</p>
+
                         <h4>Results</h4>
                         <p>• Identified 200+ data quality issues early<br>
-                        • Created testing framework for 50K+ scenarios<br>
-                        • Successful migration with 99.7% accuracy</p>
-                        
+                            • Created testing framework for 50K+ scenarios<br>
+                            • Successful migration with 99.7% accuracy</p>
+
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">XML</span>
@@ -701,16 +1345,18 @@
                     </div>
                     <div class="project-body">
                         <h4>Challenge</h4>
-                        <p>Inefficient payment routing led to high correspondent banking fees and slow settlement times.</p>
-                        
+                        <p>Inefficient payment routing led to high correspondent banking fees and slow settlement times.
+                        </p>
+
                         <h4>Solution</h4>
-                        <p>Analyzed MT202 routing patterns across 150 corridors. Built optimization model to recommend best routing paths based on cost, speed, and reliability.</p>
-                        
+                        <p>Analyzed MT202 routing patterns across 150 corridors. Built optimization model to recommend
+                            best routing paths based on cost, speed, and reliability.</p>
+
                         <h4>Results</h4>
                         <p>• Reduced average routing cost by 28%<br>
-                        • Improved settlement speed by 40%<br>
-                        • $4.5M annual cost savings</p>
-                        
+                            • Improved settlement speed by 40%<br>
+                            • $4.5M annual cost savings</p>
+
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">Network Analysis</span>
@@ -728,16 +1374,18 @@
                     </div>
                     <div class="project-body">
                         <h4>Challenge</h4>
-                        <p>Traditional rule-based AML systems generated too many false positives, overwhelming compliance teams.</p>
-                        
+                        <p>Traditional rule-based AML systems generated too many false positives, overwhelming
+                            compliance teams.</p>
+
                         <h4>Solution</h4>
-                        <p>Developed machine learning models to detect complex money laundering patterns in SWIFT transactions using behavioral analytics and network analysis.</p>
-                        
+                        <p>Developed machine learning models to detect complex money laundering patterns in SWIFT
+                            transactions using behavioral analytics and network analysis.</p>
+
                         <h4>Results</h4>
                         <p>• Reduced false positives by 65%<br>
-                        • Identified 23 previously undetected risks<br>
-                        • Improved investigation efficiency by 50%</p>
-                        
+                            • Identified 23 previously undetected risks<br>
+                            • Improved investigation efficiency by 50%</p>
+
                         <div class="project-tech">
                             <span class="tech-tag">Python</span>
                             <span class="tech-tag">TensorFlow</span>
@@ -779,12 +1427,14 @@
 
                 <div class="timeline-item">
                     <h3>Junior Financial Consultant - Standard and Professional Services Integration APAC Team</h3>
-                    <div class="timeline-meta">Society of Worldwide Interbank and Telecommunication, SWIFT | 2019 - 2021</div>
+                    <div class="timeline-meta">Society of Worldwide Interbank and Telecommunication, SWIFT | 2019 - 2021
+                    </div>
                     <ul>
                         <li>Supported SWIFT payment processing and reconciliation activities</li>
                         <li>Developed SQL queries and reports for transaction analysis</li>
                         <li>Develop data mapping and migration from legacy systems to modern SWIFT infrastructure</li>
-                        <li>Performed data quality checks on SEPA, EUROZONE, ESMIG, RTGS, CLM, MEPS , BAHTNET messages</li>
+                        <li>Performed data quality checks on SEPA, EUROZONE, ESMIG, RTGS, CLM, MEPS , BAHTNET messages
+                        </li>
                     </ul>
                 </div>
                 <div class="timeline-item">
@@ -792,7 +1442,8 @@
                     <div class="timeline-meta">Society of Worldwide Interbank and Telecommunication, SWIFT | 2019 </div>
                     <ul>
                         <li>Supported SWIFT customer query on e-order form processing and reconciliation activities</li>
-                        <li>Consulted user on 'How To' and provide solution to solve Alliance Family Product & WebSphere MQ support end to end</li>
+                        <li>Consulted user on 'How To' and provide solution to solve Alliance Family Product & WebSphere
+                            MQ support end to end</li>
                         <li>Assisted in migration from legacy systems to modern SWIFT infrastructure</li>
                         <li>Performed data quality checks on MT103 and MT202, pacs.008, pacs.009 messages</li>
                     </ul>
@@ -806,11 +1457,11 @@
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <p class="section-subtitle">Interested in working together? Fill the form below.</p>
-            
+
             <div class="contact-grid">
                 <div class="contact-info">
                     <h3>Contact Information</h3>
-                    
+
                     <div class="contact-item">
                         <div class="contact-icon">📧</div>
                         <div>
@@ -846,55 +1497,407 @@
 
                 <form action="https://api.web3forms.com/submit" method="POST">
 
-                <!-- Replace with your Access Key -->
-                <input type="hidden" name="access_key" value="533a7fc2-a2d6-46be-9978-ce228edc5aab">
-                <!-- Form Inputs. Each input must have a name="" attribute -->
-                <form class="contact-form" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="access_key" value="533a7fc2-a2d6-46be-9978-ce228edc5aab">
+                    <!-- Form Inputs. Each input must have a name="" attribute -->
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
 
-                    <button type="submit" class="btn btn-submit">Send Message</button>
-                </form>
+                        <button type="submit" class="btn btn-submit">Send Message</button>
+                    </form>
             </div>
         </div>
     </section>
-  <div id="responseMessage"></div>
-    
+    <div id="responseMessage"></div>
+
+    <!-- Honeypot Spam Protection -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+    </div>
+    <div class="project-body">
+        <h4>Challenge</h4>
+        <p>Inefficient payment routing led to high correspondent banking fees and slow settlement times.
+        </p>
+
+        <h4>Solution</h4>
+        <p>Analyzed MT202 routing patterns across 150 corridors. Built optimization model to recommend
+            best routing paths based on cost, speed, and reliability.</p>
+
+        <h4>Results</h4>
+        <p>• Reduced average routing cost by 28%<br>
+            • Improved settlement speed by 40%<br>
+            • $4.5M annual cost savings</p>
+
+        <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Network Analysis</span>
+            <span class="tech-tag">MT202</span>
+            <span class="tech-tag">Tableau</span>
+        </div>
+    </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-card">
+        <div class="project-header">
+            <h3>AML Pattern Detection System</h3>
+            <p class="project-subtitle">Identifying suspicious transaction patterns</p>
+        </div>
+        <div class="project-body">
+            <h4>Challenge</h4>
+            <p>Traditional rule-based AML systems generated too many false positives, overwhelming
+                compliance teams.</p>
+
+            <h4>Solution</h4>
+            <p>Developed machine learning models to detect complex money laundering patterns in SWIFT
+                transactions using behavioral analytics and network analysis.</p>
+
+            <h4>Results</h4>
+            <p>• Reduced false positives by 65%<br>
+                • Identified 23 previously undetected risks<br>
+                • Improved investigation efficiency by 50%</p>
+
+            <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag">Graph Analytics</span>
+                <span class="tech-tag">SQL</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Senior Data Analyst - SWIFT Payments</h3>
+                    <div class="timeline-meta">Natwest & Clydesdale Bank | 2022 - </div>
+                    <ul>
+                        <li>Lead analytics initiatives for $50B+ annual SWIFT transaction volume</li>
+                        <li>Developed automated monitoring systems reducing payment failures by 45%</li>
+                        <li>Spearheaded ISO 20022 migration analytics and readiness assessment</li>
+                        <li>Built predictive models for transaction anomaly detection with 92% accuracy</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Senior Data Analyst - Payment Operations</h3>
+                    <div class="timeline-meta">UOB Bank | 2021 - 2022</div>
+                    <ul>
+                        <li>Analyzed MT message flows to optimize cross-border payment routing</li>
+                        <li>Created executive dashboards tracking KPIs for payment operations</li>
+                        <li>Reduced reconciliation discrepancies by 60% through improved data quality processes</li>
+                        <li>Collaborated with compliance team on AML transaction monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Junior Financial Consultant - Standard and Professional Services Integration APAC Team</h3>
+                    <div class="timeline-meta">Society of Worldwide Interbank and Telecommunication, SWIFT | 2019 -
+                        2021
+                    </div>
+                    <ul>
+                        <li>Supported SWIFT payment processing and reconciliation activities</li>
+                        <li>Developed SQL queries and reports for transaction analysis</li>
+                        <li>Develop data mapping and migration from legacy systems to modern SWIFT infrastructure
+                        </li>
+                        <li>Performed data quality checks on SEPA, EUROZONE, ESMIG, RTGS, CLM, MEPS , BAHTNET
+                            messages
+                        </li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Intern - Business Application Support APAC Team</h3>
+                    <div class="timeline-meta">Society of Worldwide Interbank and Telecommunication, SWIFT | 2019
+                    </div>
+                    <ul>
+                        <li>Supported SWIFT customer query on e-order form processing and reconciliation activities
+                        </li>
+                        <li>Consulted user on 'How To' and provide solution to solve Alliance Family Product &
+                            WebSphere
+                            MQ support end to end</li>
+                        <li>Assisted in migration from legacy systems to modern SWIFT infrastructure</li>
+                        <li>Performed data quality checks on MT103 and MT202, pacs.008, pacs.009 messages</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Interested in working together? Fill the form below.</p>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            japryatikah@gmail.com
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            linkedin.com/in/atikahjapry
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">💻</div>
+                        <div>
+                            <strong>GitHub</strong><br>
+                            github.com/atikahjapry
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>Location</strong><br>
+                            London, United Kingdom
+                        </div>
+                    </div>
+                </div>
+
+                <form action="https://api.web3forms.com/submit" method="POST">
+
+                    <!-- Replace with your Access Key -->
+                    <input type="hidden" name="access_key" value="533a7fc2-a2d6-46be-9978-ce228edc5aab">
+                    <!-- Form Inputs. Each input must have a name="" attribute -->
+                    <form class="contact-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit">Send Message</button>
+                    </form>
+            </div>
+        </div>
+    </section>
+    <div id="responseMessage"></div>
+
     <!-- Honeypot Spam Protection -->
     <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
     <!-- Custom Confirmation / Success Page -->
     <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
- 
 
-</form>
+
+    </form>
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Nurul Atikah Japry. All rights reserved. | Built with Cloudflare and Github to care for SWIFT payment analytics excellence.</p>
+            <p>&copy; 2025 Nurul Atikah Japry. All rights reserved. | Built with Cloudflare and Github to care for
+                SWIFT
+                payment analytics excellence.</p>
         </div>
     </footer>
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.\n\nNote: To make this form functional, you can:\n1. Use a service like Formspree or EmailJS\n2. Connect to Cloudflare Workers for backend processing\n3. Use a third-party form service');
-            e.target.reset();
+        // ===== DARK MODE TOGGLE =====
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            const themeIcon = document.getElementById('themeIcon');
+
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            // Update icon
+            if (themeIcon) {
+                themeIcon.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+            }
         }
 
-        // Smooth scroll for navigation links
+        // Load saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const themeIcon = document.getElementById('themeIcon');
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (themeIcon) {
+                themeIcon.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+            }
+        });
+
+        // ===== MOBILE MENU TOGGLE =====
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuToggle = document.getElementById('mobileMenuToggle');
+
+            mobileMenu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleMobileMenu();
+            });
+        });
+
+        // ===== SCROLL PROGRESS BAR =====
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+
+            // Add shadow to nav on scroll
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // ===== PARTICLE ANIMATION =====
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // ===== TYPING EFFECT =====
+        function typeWriter() {
+            const text = "Data Analyst | SWIFT Payments Specialist";
+            const typingElement = document.getElementById('typingText');
+            let index = 0;
+            let isDeleting = false;
+            typingElement.textContent = '';
+
+            function type() {
+                if (!isDeleting && index <= text.length) {
+                    typingElement.textContent = text.substring(0, index);
+                    index++;
+                    setTimeout(type, 100);
+                } else if (isDeleting && index > 0) {
+                    typingElement.textContent = text.substring(0, index);
+                    index--;
+                    setTimeout(type, 50);
+                } else if (index === text.length) {
+                    // Pause at the end
+                    setTimeout(() => {
+                        isDeleting = true;
+                        type();
+                    }, 3000);
+                } else if (index === 0) {
+                    // Pause when empty
+                    setTimeout(() => {
+                        isDeleting = false;
+                        type();
+                    }, 1000);
+                }
+            }
+
+            type();
+        }
+
+        // ===== STAT COUNTER ANIMATION =====
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200; // Animation speed
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                if (!target) return;
+
+                let count = 0;
+                const increment = target / speed;
+
+                const updateCount = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.textContent = Math.ceil(count);
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+
+                updateCount();
+            });
+        }
+
+        // ===== SCROLL ANIMATIONS =====
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
+
+            // Observe project cards
+            document.querySelectorAll('.project-card').forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Observe timeline items
+            document.querySelectorAll('.timeline-item').forEach((item, index) => {
+                item.style.transitionDelay = `${index * 0.15}s`;
+                observer.observe(item);
+            });
+        });
+
+        // ===== SMOOTH SCROLL FOR NAVIGATION =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -907,6 +1910,44 @@
                 }
             });
         });
+
+        // ===== FORM SUBMISSION HANDLER =====
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.\n\nNote: To make this form functional, you can:\n1. Use a service like Formspree or EmailJS\n2. Connect to Cloudflare Workers for backend processing\n3. Use a third-party form service');
+            e.target.reset();
+        }
+
+        // ===== INITIALIZE ON PAGE LOAD =====
+        window.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            typeWriter();
+
+            // Trigger counter animation when stats section is visible
+            const statsSection = document.querySelector('.stats');
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        });
+
+        // ===== PAGE LOAD ANIMATION =====
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
     </script>
 </body>
+
 </html>
