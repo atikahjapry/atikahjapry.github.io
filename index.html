@@ -1452,6 +1452,40 @@
         </div>
     </section>
 
+<!-- Youtube autoplay -->
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Autoplay</title>
+  <style>
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/XLKKOvqG4NY?autoplay=1&mute=1"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+</body>
+</html>
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -1538,7 +1572,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Nurul Atikah Japry. All rights reserved. | Built with Cloudflare and Github to care for
+            <p>&copy; 2026 Nurul Atikah Japry. All rights reserved. | Built with Cloudflare and Github to care for
                 SWIFT
                 payment analytics excellence.</p>
         </div>
