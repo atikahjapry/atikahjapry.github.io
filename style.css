@@ -1,0 +1,38 @@
+.blog-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.post {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.post h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #2c3e50;
+}
+
+.post h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post h2 a:hover {
+  text-decoration: underline;
+}
+
+.date {
+  color: #7f8c8d;
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+.excerpt {
+  color: #34495e;
+  line-height: 1.6;
+}
